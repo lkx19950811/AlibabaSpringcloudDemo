@@ -57,6 +57,18 @@ public class HelloController {
 
         return "hello Sentinel333 !" ;
     }
+
+    /**
+     * 需要往nacos数据里添加一条 dataID 为 service-sentinel-sentinel-degrade
+     * * [
+     *      *   {
+     *      *     "resource": "hello",
+     *      *     "count": 20.0,
+     *      *     "grade": 0,
+     *      *     "timeWindow": 10
+     *      *   }
+     *      * ]
+     */
     // 该方法降级处理函数，参数要与原函数helloworld3相同，并且返回值类型也要与原函数相同，此外，该方法必须与原函数在同一个类中
     public String helloFallback(){
         return "hello Sentinel ! fallback ! 触发熔断方法";
